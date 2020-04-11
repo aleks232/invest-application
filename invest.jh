@@ -1,0 +1,81 @@
+// an ignored comment
+/** not an ignored comment */
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+
+/**
+ * The Employee entity.
+ */
+entity Accounts {
+	login String,
+    isDeleted Integer,
+    password String,
+    expiredDate Instant
+}
+ 
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+    middleName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+    role Role
+}
+
+enum Role {
+    OWNER(Собственник), 
+    INVESTOR(Инвестор)
+}
+
+entity Lots {
+	description String,
+	minPrice Long,
+    startDate Instant,
+	endDate Instant
+}
+
+entity Orders {
+	startDate Instant,
+	endDate Instant,
+    price Long
+}
+
+entity Packages {
+	title String,
+	description String
+}
+
+entity Documents {
+	title String,
+	description String,
+    type String
+}
+
+relationship OneToMany {
+    Accounts to Employee{account},
+	/**
+	* A relationship
+	*/
+	Employee to Lots{employee},
+    Lots to Orders{lot},
+    Lots to Packages{lot},
+    Packages to Documents{package}
+}
+
+// Set pagination options
+paginate Role with infinite-scroll
+paginate Lots, Employee with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Role
+
