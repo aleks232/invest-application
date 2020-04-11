@@ -1,0 +1,62 @@
+{
+    "name": "Employee",
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "javadoc": "The firstname attribute.",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "middleName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hireDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "role",
+            "fieldType": "Role",
+            "fieldValues": "OWNER,INVESTOR"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "lots",
+            "otherEntityRelationshipName": "employee",
+            "javadoc": "A relationship",
+            "relationshipName": "lots"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "accounts",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "account",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200411110400",
+    "entityTableName": "employee",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

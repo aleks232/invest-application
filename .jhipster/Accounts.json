@@ -1,0 +1,41 @@
+{
+    "name": "Accounts",
+    "fields": [
+        {
+            "fieldName": "login",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isDeleted",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "expiredDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "account",
+            "relationshipName": "employee"
+        }
+    ],
+    "changelogDate": "20200411110300",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "accounts",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
