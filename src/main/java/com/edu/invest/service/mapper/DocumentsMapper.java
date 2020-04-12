@@ -12,10 +12,10 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {PackagesMapper.class})
 public interface DocumentsMapper extends EntityMapper<DocumentsDTO, Documents> {
 
-    @Mapping(source = "package.id", target = "packageId")
+    @Mapping(source = "packageDocuments.id", target = "packageId")
     DocumentsDTO toDto(Documents documents);
 
-    @Mapping(source = "packageId", target = "package")
+    @Mapping(source = "packageId", target = "packageDocuments")
     Documents toEntity(DocumentsDTO documentsDTO);
 
     default Documents fromId(Long id) {

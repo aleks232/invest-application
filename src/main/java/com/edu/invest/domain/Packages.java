@@ -29,7 +29,7 @@ public class Packages implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "package")
+    @OneToMany(mappedBy = "packageDocuments")
     private Set<Documents> documents = new HashSet<>();
 
     @ManyToOne
@@ -82,13 +82,13 @@ public class Packages implements Serializable {
 
     public Packages addDocuments(Documents documents) {
         this.documents.add(documents);
-        documents.setPackage(this);
+        documents.setPackageDocuments(this);
         return this;
     }
 
     public Packages removeDocuments(Documents documents) {
         this.documents.remove(documents);
-        documents.setPackage(null);
+        documents.setPackageDocuments(null);
         return this;
     }
 

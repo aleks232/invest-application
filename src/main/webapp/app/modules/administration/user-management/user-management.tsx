@@ -43,20 +43,20 @@ export const UserManagement = (props: IUserManagementProps) => {
   return (
     <div>
       <h2 id="user-management-page-heading">
-        Users
+        Пользователи
         <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity">
-          <FontAwesomeIcon icon="plus" /> Create a new user
+          <FontAwesomeIcon icon="plus" /> Создание нового пользователя
         </Link>
       </h2>
       <Table responsive striped>
         <thead>
           <tr>
             <th className="hand" onClick={sort('id')}>
-              ID
+              Идентификатор
               <FontAwesomeIcon icon="sort" />
             </th>
             <th className="hand" onClick={sort('login')}>
-              Login
+              Логин
               <FontAwesomeIcon icon="sort" />
             </th>
             <th className="hand" onClick={sort('email')}>
@@ -64,17 +64,17 @@ export const UserManagement = (props: IUserManagementProps) => {
               <FontAwesomeIcon icon="sort" />
             </th>
             <th />
-            <th>Profiles</th>
+            <th>Профили</th>
             <th className="hand" onClick={sort('createdDate')}>
-              Created Date
+              Дата создания
               <FontAwesomeIcon icon="sort" />
             </th>
             <th className="hand" onClick={sort('lastModifiedBy')}>
-              Last Modified By
+              Последнее изменение
               <FontAwesomeIcon icon="sort" />
             </th>
             <th id="modified-date-sort" className="hand" onClick={sort('lastModifiedDate')}>
-              Last Modified Date
+              Дата последнего изменения
               <FontAwesomeIcon icon="sort" />
             </th>
             <th />

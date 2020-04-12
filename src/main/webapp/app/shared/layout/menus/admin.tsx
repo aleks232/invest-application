@@ -8,23 +8,23 @@ import { NavDropdown } from './menu-components';
 const adminMenuItems = (
   <>
     <MenuItem icon="user" to="/admin/user-management">
-      User management
+      Пользователи
     </MenuItem>
     <MenuItem icon="tachometer-alt" to="/admin/metrics">
-      Metrics
+      Метрики
     </MenuItem>
     <MenuItem icon="heart" to="/admin/health">
-      Health
+      Проверка работоспобности
     </MenuItem>
     <MenuItem icon="list" to="/admin/configuration">
-      Configuration
+      Конфигурация
     </MenuItem>
     <MenuItem icon="bell" to="/admin/audits">
-      Audits
+      Журнал аудита
     </MenuItem>
     {/* jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here */}
     <MenuItem icon="tasks" to="/admin/logs">
-      Logs
+      Логирование
     </MenuItem>
   </>
 );
@@ -42,7 +42,7 @@ const databaseItem = (
 );
 
 export const AdminMenu = ({ showSwagger, showDatabase }) => (
-  <NavDropdown icon="user-plus" name="Administration" style={{ width: '140%' }} id="admin-menu">
+  <NavDropdown icon="user-plus" name="Администрирование" style={{ width: '140%' }} id="admin-menu">
     {adminMenuItems}
     {showSwagger && swaggerItem}
 

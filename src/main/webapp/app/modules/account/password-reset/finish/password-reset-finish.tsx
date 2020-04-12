@@ -25,8 +25,8 @@ export const PasswordResetFinishPage = (props: IPasswordResetFinishProps) => {
       <AvForm onValidSubmit={handleValidSubmit}>
         <AvField
           name="newPassword"
-          label="New password"
-          placeholder={'New password'}
+          label="Новый пароль"
+          placeholder={'Новый пароль'}
           type="password"
           validate={{
             required: { value: true, errorMessage: 'Your password is required.' },
@@ -38,8 +38,8 @@ export const PasswordResetFinishPage = (props: IPasswordResetFinishProps) => {
         <PasswordStrengthBar password={password} />
         <AvField
           name="confirmPassword"
-          label="New password confirmation"
-          placeholder="Confirm the new password"
+          label="Подтвердите новый пароль"
+          placeholder="Подтвердите новый пароль"
           type="password"
           validate={{
             required: { value: true, errorMessage: 'Your confirmation password is required.' },
@@ -49,7 +49,7 @@ export const PasswordResetFinishPage = (props: IPasswordResetFinishProps) => {
           }}
         />
         <Button color="success" type="submit">
-          Validate new password
+          Проверка нового пароля
         </Button>
       </AvForm>
     );
@@ -59,7 +59,7 @@ export const PasswordResetFinishPage = (props: IPasswordResetFinishProps) => {
     <div>
       <Row className="justify-content-center">
         <Col md="4">
-          <h1>Reset password</h1>
+          <h1>Сброс пароля</h1>
           <div>{key ? getResetForm() : null}</div>
         </Col>
       </Row>

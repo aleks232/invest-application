@@ -7,7 +7,7 @@ import java.util.Objects;
  * A DTO for the {@link com.edu.invest.domain.Documents} entity.
  */
 public class DocumentsDTO implements Serializable {
-    
+
     private Long id;
 
     private String title;
@@ -16,9 +16,8 @@ public class DocumentsDTO implements Serializable {
 
     private String type;
 
-
     private Long packageId;
-    
+
     public Long getId() {
         return id;
     }

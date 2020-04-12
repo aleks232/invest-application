@@ -30,11 +30,11 @@ export const PasswordPage = (props: IUserPasswordProps) => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="password-title">Password for {props.account.login}</h2>
+          <h2 id="password-title">Изменение пароля для пользователя {props.account.login}</h2>
           <AvForm id="password-form" onValidSubmit={handleValidSubmit}>
             <AvField
               name="currentPassword"
-              label="Current password"
+              label="Текущий пароль"
               placeholder={'Current password'}
               type="password"
               validate={{
@@ -43,7 +43,7 @@ export const PasswordPage = (props: IUserPasswordProps) => {
             />
             <AvField
               name="newPassword"
-              label="New password"
+              label="Новый пароль"
               placeholder={'New password'}
               type="password"
               validate={{
@@ -56,7 +56,7 @@ export const PasswordPage = (props: IUserPasswordProps) => {
             <PasswordStrengthBar password={password} />
             <AvField
               name="confirmPassword"
-              label="New password confirmation"
+              label="Подтвердить новый пароль"
               placeholder="Confirm the new password"
               type="password"
               validate={{
