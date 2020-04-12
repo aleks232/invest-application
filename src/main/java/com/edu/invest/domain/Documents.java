@@ -32,7 +32,7 @@ public class Documents implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("documents")
-    private Packages package;
+    private Packages packageDocuments;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -82,18 +82,19 @@ public class Documents implements Serializable {
         this.type = type;
     }
 
-    public Packages getPackage() {
-        return package;
+    public Packages getPackageDocuments() {
+        return packageDocuments;
     }
 
-    public Documents package(Packages packages) {
-        this.package = packages;
+    public void setPackageDocuments(Packages packageDocuments) {
+        this.packageDocuments = packageDocuments;
+    }
+
+    public Documents packageDocuments(Packages packageDocuments) {
+        this.packageDocuments = packageDocuments;
         return this;
     }
 
-    public void setPackage(Packages packages) {
-        this.package = packages;
-    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override

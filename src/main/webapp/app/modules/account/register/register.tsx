@@ -26,7 +26,7 @@ export const RegisterPage = (props: IRegisterProps) => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h1 id="register-title">Registration</h1>
+          <h1 id="register-title">Регистрация</h1>
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -80,15 +80,15 @@ export const RegisterPage = (props: IRegisterProps) => {
               }}
             />
             <Button id="register-submit" color="primary" type="submit">
-              Register
+              Регистрация
             </Button>
           </AvForm>
           <p>&nbsp;</p>
           <Alert color="warning">
-            <span>If you want to</span>
-            <a className="alert-link"> sign in</a>
+            <span>Если вы хотите</span>
+            <a className="alert-link"> Авторизоваться</a>
             <span>
-              , you can try the default accounts:
+              , вы можете использовать:
               <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
               <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
             </span>

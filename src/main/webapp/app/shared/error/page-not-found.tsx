@@ -6,7 +6,7 @@ class PageNotFound extends React.Component {
   render() {
     return (
       <div>
-        <Alert color="danger">The page does not exist.</Alert>
+        <Alert color="danger">Страница не найдена.</Alert>
       </div>
     );
   }

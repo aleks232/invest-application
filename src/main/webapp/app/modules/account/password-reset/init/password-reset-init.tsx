@@ -24,9 +24,9 @@ export class PasswordResetInit extends React.Component<IPasswordResetInitProps> 
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h1>Reset your password</h1>
+            <h1>Сбросить пароль</h1>
             <Alert color="warning">
-              <p>Enter the email address you used to register</p>
+              <p>Введите ваш email указанный при регистрации</p>
             </Alert>
             <AvForm onValidSubmit={this.handleValidSubmit}>
               <AvField
@@ -41,7 +41,7 @@ export class PasswordResetInit extends React.Component<IPasswordResetInitProps> 
                 }}
               />
               <Button color="primary" type="submit">
-                Reset password
+                Сбросить пароль
               </Button>
             </AvForm>
           </Col>
