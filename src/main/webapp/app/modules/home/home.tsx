@@ -8,15 +8,25 @@ import { Row, Col, Alert } from 'reactstrap';
 
 import { IRootState } from 'app/shared/reducers';
 
-export type IHomeProp = StateProps;
+import { getEntities } from 'app/entities/lots/lots.reducer';
+
+export interface IHomeProp extends StateProps, DispatchProps {}
 
 export const Home = (props: IHomeProp) => {
-  const { account } = props;
+  const { account, lots, getLots } = props;
+
+  const lastThreeLots = React.useMemo(() => lots.slice(-3), [lots]);
+
+  React.useEffect(() => {
+    if(!lots.length){
+      getLots();
+    }
+  }, [lots])
 
   return (
     <Row>
       <Col md="9">
-        <h2>Добро пожаловажать на портал инвестирования!</h2>
+        <h2>Добро пожаловать на портал инвестирования!</h2>
         <p className="lead"></p>
         {account && account.login ? (
           <div>
@@ -24,21 +34,15 @@ export const Home = (props: IHomeProp) => {
 
             <p>Последние открытые лоты:</p>
             <ul>
-              <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  Лот 6: Покупка партии тюльпанов
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  Лот 11: Покупка партии гвоздик
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  Лот 23: Покупка партии роз
-                </a>
-              </li>
+              {
+                lastThreeLots.map((lot) => (
+                  <li key={lot.id}>
+                    <Link to={`/lots/${lot.id}`}>
+                      Лот {lot.id}: {lot.description}
+                    </Link>
+                  </li>
+                ))
+              }
             </ul>
 
             <p>
@@ -92,11 +96,15 @@ export const Home = (props: IHomeProp) => {
   );
 };
 
-const mapStateToProps = storeState => ({
+const mapStateToProps = (storeState: IRootState) => ({
   account: storeState.authentication.account,
-  isAuthenticated: storeState.authentication.isAuthenticated
+  isAuthenticated: storeState.authentication.isAuthenticated,
+  lots: storeState.lots.entities,
 });
 
-type StateProps = ReturnType<typeof mapStateToProps>;
+const mapDispatchToProps = { getLots: getEntities };
 
-export default connect(mapStateToProps)(Home);
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
